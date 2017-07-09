@@ -1,0 +1,422 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" >
+    <!-- Das neueste kompilierte und minimierte CSS -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css">
+
+    <!-- Optionales Theme -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap-theme.min.css">
+
+    <!-- Das neueste kompilierte und minimierte JavaScript -->
+    <script src="bootstrap-3.3.7-dist/js/bootstrap.min.js"></script>
+<!--
+    <link rel="stylesheet" href="//code.jquery.com/ui/1.12.1/themes/smoothness/jquery-ui.css">
+    -->
+    <script src="//code.jquery.com/jquery-1.12.4.js"></script>
+    <script src="//code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
+
+    <link rel="stylesheet" type="text/css" href="Advanced_Projekt.css">
+    <link rel="stylesheet" type="text/css" href="Navbar.css">
+    <link rel="stylesheet" type="text/css" href="Smoothie.css">
+
+    <script type="text/javascript">
+        jQuery(document).ready(function () {
+            jQuery.noConflict();
+            var droppedElements = 0;
+            jQuery(".element").draggable({
+                revert: "invalid",
+                scrollSpeed: 10,
+                helper: "clone",
+                scope: "fresh"
+
+
+        });
+        jQuery(".rows").droppable({
+            scope: "old",
+            drop: function (event, ui) {
+                deleteCookies();
+                if (jQuery(this).children().length < 4) {
+                    droppedElements--;
+                    jQuery(this).append(ui.draggable);
+                    jQuery(this).find(".element").draggable("option", "scope", "fresh");
+                    zutatenanzeige();
+
+                    if (droppedElements === 0) {
+                        jQuery("#fuellElement1").animate({width: '0%'});
+                    }
+
+                    if (droppedElements === 1) {
+                        jQuery("#fuellElement2").animate({width: '0%'});
+                    }
+
+                    if (droppedElements === 2) {
+                        jQuery("#fuellElement3").animate({width: '0%'});
+                    }
+
+                    if (droppedElements === 3) {
+                        jQuery("#fuellElement4").animate({width: '0%'});
+                    }
+
+                    if (droppedElements === 4) {
+                        jQuery("#fuellElement5").animate({width: '0%'});
+                    }
+
+                }
+            }
+        });
+
+        jQuery("#glas").droppable({
+            scope: "fresh",
+            drop: function (event, ui) {
+                deleteCookies();
+                droppedElements++;
+                if (droppedElements < 6) {
+
+                    jQuery("#inhalt").append(ui.draggable);
+                    jQuery("#inhalt").find(".element").draggable("option", "scope", "old");
+                    zutatenanzeige();
+                }
+
+                if (droppedElements === 1) {
+                    jQuery("#fuellElement1").animate({width: '20%'});
+                }
+
+                if (droppedElements === 2) {
+                    jQuery("#fuellElement2").animate({width: '23%'});
+                }
+
+                if (droppedElements === 3) {
+                    jQuery("#fuellElement3").animate({width: '26%'});
+                }
+
+                if (droppedElements === 4) {
+                    jQuery("#fuellElement4").animate({width: '29%'});
+                }
+
+                if (droppedElements === 5) {
+                    jQuery("#fuellElement5").animate({width: '33%'});
+                }
+
+                if (droppedElements > 5) {
+                    window.alert("Es können nur 5 Früchte je Smoothie hinzugefügt werden.")
+                    droppedElements--;
+                }
+            }
+        });
+
+        jQuery(".d3" ).accordion({
+            collapsible: true,
+            heightStyle: "content",
+            active: false
+        });
+
+        jQuery("#bestellbutton").click(function () {
+            jQuery('html, body').animate({ scrollTop: (jQuery(".form").offset().top)}, 'slow');
+        })
+    });
+
+
+
+    </script>
+
+
+</head>
+<body>
+
+
+<div class="container">
+    <div class="logo">
+        <img id="logo" src="bilder/birne.png">
+    </div>
+    <div id="navbar">
+
+        <li class="dropdown">
+            <a class="dropbtn" href="Startseite.html"><b> Menü</b></a>
+            <div class="dropdown-content">
+
+                <div id="stufe2-link1">
+                    <a href="Startseite.html"><img id="hut" src="bilder/hut.png"> Startseite</a>
+                    <div class="stufe3" id="stufe3-link1">
+
+
+                    </div>
+                </div>
+
+                <div id="stufe2-link2">
+                    <a href="#"><img id="straw" src="bilder/strawberry.png"> Produkte</a>
+                    <div class="stufe3" id="stufe3-link2">
+                        <a href="Smoothies.html"><img src="bilder/smoothie_icon.png" id="smoothie-icon">Smoothies</a>
+                    </div>
+                </div>
+
+                <div id="stufe2-link3">
+                    <a>Link 3</a>
+                    <div class="stufe3" id="stufe3-link3">
+                        <a>TEST3</a>
+                        <a>Test4</a>
+                        <a>Test5</a>
+                    </div>
+                </div>
+
+            </div>
+        </li>
+    </div>
+
+    <div class="erlauterungen">
+        <p>Hier können Sie sich Ihren ganz persönlichen Smoothie zusammenstellen</p>
+        <p>Um Zutaten hinzuzufügen, diese einfach per Drag and Drop auf den Becher ziehen.</p>
+        <p>Um Zutaten zu entfernen, ziehen Sie diese wieder zurück in eine Reihe mit einer freien Stelle</p>
+    </div>
+
+
+    <div class="smoothie">
+        <div class="glaso">
+            <img id="glas" src="bilder/Element1.png">
+            <img id="fuellElement1" src="bilder/Element3.png">
+            <img id="fuellElement2"  src="bilder/Element4.png">
+            <img id="fuellElement3"  src="bilder/Element5.png">
+            <img id="fuellElement4" src="bilder/Element6.png">
+            <img id="fuellElement5"  src="bilder/Element7.png">
+            <img id="arrow2" src="bilder/Curved_Arrow.svg.png">
+        </div>
+
+
+
+    </div>
+
+    <div class="fruechte">
+        <div class="rows" id="row1">
+            <div class="element" id="Ananas">
+                <img src="bilder/fruits/pineapple.png">
+                <p><b>Ananas</b></p>
+            </div>
+            <div class="element" id="Karotte">
+                <img src="bilder/fruits/carrot.png">
+                <p><b>Karotte</b></p>
+            </div>
+            <div class="element" id="Erdbeere">
+                <img src="bilder/fruits/strawberry.png">
+                <p><b>Erdbeere</b></p>
+            </div>
+            <div class="element" id="Apfel">
+                <img src="bilder/fruits/apple.png">
+                <p><b>Apfel</b></p>
+            </div>
+        </div>
+        <div class="rows" id="row2">
+            <div class="element" id="Avocado">
+                <img src="bilder/fruits/avocado.png">
+                <p><b>Avocado</b></p>
+            </div>
+            <div class="element" id="Banane">
+                <img src="bilder/fruits/bananas.png">
+                <p><b>Banane</b></p>
+            </div>
+            <div class="element" id="Kirsche">
+                <img src="bilder/fruits/cherries.png">
+                <p><b>Kirsche</b></p>
+            </div>
+            <div class="element" id="Hafer">
+                <img src="bilder/fruits/grain.png">
+                <p><b>Hafer</b></p>
+            </div>
+        </div>
+        <div class="rows" id="row3">
+            <div class="element" id="Zitrone">
+                <img src="bilder/fruits/lemons.png">
+                <p><b>Zitrone</b></p>
+            </div>
+            <div class="element" id="Birne">
+                <img src="bilder/fruits/pear.png">
+                <p><b>Birne</b></p>
+            </div>
+            <div class="element" id="Tomate">
+                <img src="bilder/fruits/tomato.png">
+                <p><b>Tomate</b></p>
+            </div>
+            <div class="element" id="Wassermelone">
+                <img src="bilder/fruits/watermelon.png">
+                <p><b>Wassermelone</b></p>
+            </div>
+        </div>
+    </div>
+
+    <div class="inhaltsliste">
+        <h3 class="uberschriften">Hinzugefügte Zutaten:</h3>
+        <div id="inhalt"></div>
+        <img id="arrow" src="bilder/Curved_Arrow.svg.png">
+    </div>
+    <div class="bestellen">
+        <button id="bestellbutton" class="bestellbutton"><img id="mixer" src="bilder/mixer.png"><b>Bestellen</b>
+        </button>
+        <div class="messg">
+            <p id="message"></p>
+        </div>
+        <div class="hotline">
+
+            <img id="hotline_img" src="bilder/hotline.png">
+
+            <div class="ps">
+                <p><b>Haben Sie Fragen?</b></p>
+                <br>
+                <p id="hotline">Unsere Hotline ist täglich zwischen 8h und 17h für Sie da</p>
+                <br>
+                <p>Momentan ist unsere Hotline
+                <p id="countdwn"></p>: <p id="status">Offline</p></p>
+            </div>
+        </div>
+
+        <script>
+
+            var countdown = setInterval(counter, 1000);
+            var closing = new Date().setHours(19,0);
+            var opening = new Date().setHours(8,0);
+            var hotlineClose = new Date().setHours(17,0);
+
+            function counter() {
+            var today = new Date();
+
+            var distClosing = closing - today.getTime();
+            var distHotline = hotlineClose - today.getTime();
+
+
+
+            if(distClosing>0) {
+
+                var hours = Math.floor((distClosing % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+                var minutes = Math.floor((distClosing % (1000 * 60 * 60)) / (1000 * 60));
+                var seconds = Math.floor((distClosing % (1000 * 60)) / 1000);
+                document.getElementById("message").innerHTML = "<b>Wenn Sie innerhalb von <a class='countdown'>"+hours+"h "+minutes+"m "+seconds+"s </a>bestellen, wird Ihr Smoothie noch heute zubereitet und versandt!</b>";
+            }
+            else {
+                document.getElementById("message").innerHTML ="<b>Geben Sie Ihre Bestellung auf, wir werden Ihren Smoothie morgen frisch für Sie zubereiten</b>";
+            }
+
+            if((today.getTime()>opening)&&(today.getTime()<hotlineClose)){
+                var hours2 = Math.floor((distHotline % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+                var minutes2 = Math.floor((distHotline % (1000 * 60 * 60)) / (1000 * 60));
+                var seconds2 = Math.floor((distHotline % (1000 * 60)) / 1000);
+                document.getElementById("countdwn").innerHTML = " noch für "+hours2+"h "+minutes2+"m "+seconds2+"s ";
+                document.getElementById("status").innerHTML = "<p style='color: green'>Online</p>";
+            }
+            else{
+                document.getElementById("status").innerHTML = "<p style='color: red'>Offline</p>";
+                document.getElementById("countdwn").innerHTML = "";
+            }
+            }
+        </script>
+
+    </div>
+    <div class="d3">
+        <h3>Nährwertangaben</h3>
+        <div>
+
+        </div>
+    </div>
+
+    <div class="form">
+        <h3 class="uberschriften">Bestelldaten:</h3>
+        <div id="felder">
+            <form>
+            <p id="emailError">Bitte geben Sie eine gültige Email-Adresse ein</p>
+            <input class="inputs" id="mail" type="text" placeholder="EMail" required></input>
+            <input class="inputs" type="text" placeholder="Vorname" required></input>
+            <input class="inputs" type="text" placeholder="Nachname" required></input>
+            <input class="inputs" type="text" placeholder="Straße" required></input>
+            <input class="inputs" type="text" maxlength="4"placeholder="Hausnummer" required></input>
+            <input class="inputs" maxlength="5" type="text" placeholder="PLZ" required></input>
+
+            <select title="Wählen Sie die gewünschte Zahlungsart durch Klicken aus" id="selecto" onchange="checkSelectedValue()">
+                <option disabled selected="selected">Zahlungsart wählen</option>
+                <option value="Lastschrift">Lastschrift</option>
+                <option value="Kreditkarte">Kreditkarte</option>
+            </select>
+            <div id="lastschrift">
+                <input class="inputs" type="text" placeholder="Kontoinhaber" required></input>
+                <input class="inputs" type="text" placeholder="IBAN" required></input>
+            </div>
+            <div id="kreditkarte">
+                <input class="inputs" type="text" placeholder="Kreditkartennummer" required></input>
+                <input class="inputs" type="text" placeholder="PIN" maxlength="4" required></input>
+                <input class="inputs" type="text" placeholder="Gültig bis" maxlength="4" required></input>
+
+            </div>
+        <button class="bestellbutton" id="sendBestellung" onclick="testEmail()" type="submit">Bestellung abschicken</button>
+            </form>
+        </div>
+
+        <div id="smoothie">
+            <p>Ihr Smoothie enthält die folgenden Zutaten:</p>
+            <div id="listi">
+
+            </div>
+        </div>
+
+
+    <script>
+        function zutatenanzeige() {
+            var u = jQuery("#inhalt").find(".element");
+            var z = jQuery('<div />');
+
+            for (var i = 0; i < u.length; i++) {
+                z.append("<p> - " + u[i].id + "</p>");
+                document.cookie="zutat"+i+"="+u[i].id+"; expires=Thu, 09 Jul 2099 12:00:00 UTC";
+            }
+            jQuery("#listi").html(z);
+        }
+
+        function deleteCookies() {
+            var allCookies = document.cookie.split(";");
+
+            for (var i=0; i<allCookies.length; i++){
+                var einzelnerCookie = allCookies[i];
+
+
+                var trenner = einzelnerCookie.indexOf("=");
+                var cookieId = einzelnerCookie.substring(0, trenner);
+
+                if(cookieId.charAt(0)===' '){
+                    cookieId = cookieId.substring(1)
+                }
+                console.log(cookieId);
+                document.cookie = cookieId+"=; expires=Thu, 08 Jul 2010 12:00:00 UTC";
+            }
+        }
+
+
+        function testEmail() {
+            var string = document.getElementById("mail").value;
+            var result1 = string.indexOf('@');
+            var result2 = string.indexOf('.');
+            if ((result1 < 0) || (result2 < 0)) {
+                jQuery("#emailError").fadeIn();
+            }
+            else {
+                jQuery("#emailError").fadeOut();
+            }
+        }
+
+
+        function checkSelectedValue() {
+            var value = jQuery("#selecto").val();
+            if (value === "Lastschrift") {
+                jQuery("#kreditkarte").fadeOut("slow", function () {
+                    jQuery("#lastschrift").fadeIn(1500);
+                });
+            }
+            else {
+                jQuery("#lastschrift").fadeOut("slow", function () {
+                    jQuery("#kreditkarte").fadeIn(1500);
+                });
+            }
+
+        }
+
+
+
+    </script>
+    </div>
+</div>
+</body>
+</html>
