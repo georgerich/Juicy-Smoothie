@@ -1,0 +1,43 @@
+img {
+    width: 100%;
+    
+}
+
+.container{
+    margin: 0;
+    width: 100%;
+}
+
+.logo {
+    height: 200px;
+    background-color: #ACF187;
+}
+#logo{
+    margin-top: 2%;
+    margin-left: 41.5%;
+    width: 13%;
+    
+
+}
+
+#navbar {
+    min-height: 50px;
+    background-color: #ACF187;
+
+}
+
+
+
+.smoothie {
+    width: 50%;
+    height: 400px;
+    float: left;
+
+    position: relative;
+
+
+}
+
+
+
+

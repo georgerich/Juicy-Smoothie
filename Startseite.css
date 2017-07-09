@@ -1,0 +1,115 @@
+
+.slideshow{
+
+    height: 480px;
+
+}
+
+.images{
+    width: 25%;
+    margin-top: 10%;
+    margin-left: 35%;
+
+}
+
+.button-left{
+    width: 15%;
+    float: left;
+    min-height: 400px;
+
+}
+
+.imgs{
+    min-height: 400px;
+    float: left;
+
+    width: 70%;
+    position: relative;
+}
+
+.button-right{
+    width: 15%;
+    float: right;
+    min-height: 400px;
+
+}
+
+.arrows{
+    width: 35%;
+}
+
+.slide_buttons{
+    position: relative;
+    margin-top: 162px;
+    height: 75px;
+    border: none;
+    background-color: #ACF187;
+    border-left: 4px solid #488B49;
+    border-bottom: 7px solid #488B49;
+    border-radius: 10px;
+    outline: 0;
+}
+
+.slide_buttons:hover{
+    transform: translateY(3px);
+    border-bottom: 4px solid #488B49;
+    border-left: 3px solid #488B49;
+}
+
+.slide_buttons:active{
+    background-color: #7DB95C;
+    transform: translateY(6px);
+    border-bottom: 1px solid #488B49;
+    border-left: 1px solid #488B49;
+}
+
+#left{
+    float: right;
+}
+
+.ctrl{
+    position: absolute;
+
+    bottom: 0px;
+    margin-left: 22%;
+}
+
+.control-buttons{
+    margin-left: 10px;
+    margin-right: 10px;
+
+    background-color: transparent;
+    padding: 7px 15px;
+    outline: 0;
+    font-weight: bolder;
+    font-size: 110%;
+    border: 2px solid #488B49;
+}
+
+.control-buttons:hover{
+     background-color: #ACF187;
+ }
+
+.control-buttons:active{
+    background-color: #488B49;
+}
+
+.accordion{
+    min-height: 500px;
+}
+
+.ui-accordion-header{
+    border-bottom: 3px solid #488B49;
+    background-color: #ACF187;
+    font-weight: bold;
+    padding-top: 10px;
+    padding-left: 10px;
+    height: 50px;
+    outline: none;
+    cursor: pointer;
+}
+
+.ui-accordion-header:hover{
+    border-bottom: 2px solid #488B49;
+    transform: translateY(1px);
+}

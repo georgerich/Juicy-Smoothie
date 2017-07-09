@@ -1,0 +1,198 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+
+    <meta charset="UTF-8" >
+    <!-- Das neueste kompilierte und minimierte CSS -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css">
+
+    <!-- Optionales Theme -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap-theme.min.css">
+
+    <!-- Das neueste kompilierte und minimierte JavaScript -->
+    <script src="bootstrap-3.3.7-dist/js/bootstrap.min.js"></script>
+
+    <link rel="stylesheet" type="text/css" href="Advanced_Projekt.css">
+    <link rel="stylesheet" type="text/css" href="Navbar.css">
+    <link rel="stylesheet" type="text/css" href="Startseite.css">
+
+    <script src="https://code.jquery.com/jquery-1.12.4.js"></script>
+    <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
+    <script>
+        jQuery(document).ready(function() {
+            jQuery(".accordion" ).accordion({
+                    collapsible: true,
+                    heightStyle: "content",
+                    active: false
+                });
+            } );
+
+
+    </script>
+</head>
+<body>
+
+<div class="container">
+    <div class="logo">
+    <img id="logo" src="bilder/birne.png">
+    </div>
+    <div id="navbar">
+
+        <li class="dropdown">
+            <a class="dropbtn" href="Startseite.html"><b> Menü</b></a>
+            <div class="dropdown-content">
+
+                <div id="stufe2-link1">
+                    <a href="Startseite.html"><img id="hut" src="bilder/hut.png"> Startseite</a>
+                    <div class="stufe3" id="stufe3-link1">
+                        
+
+                    </div>
+                </div>
+
+                <div id="stufe2-link2">
+                    <a href="#"><img id="straw" src="bilder/strawberry.png"> Produkte</a>
+                    <div class="stufe3" id="stufe3-link2">
+                        <a href="Smoothies.html"><img src="bilder/smoothie_icon.png" id="smoothie-icon">Smoothies</a>
+                    </div>
+                </div>
+
+                <div id="stufe2-link3">
+                    <a href="#">Link 3</a>
+                    <div class="stufe3" id="stufe3-link3">
+                        <a>TEST3</a>
+                        <a>Test4</a>
+                        <a>Test5</a>
+                    </div>
+                </div>
+
+            </div>
+        </li>
+
+
+
+    </div>
+
+<!-- Slideshow mit allen Bildern und Buttons sowie dem notwenigen Code in Java Script-->
+    <div class="slideshow">
+        <div class="button-left">
+            <button id="left" class="slide_buttons" onclick="nextImg(-1)"><img class="arrows" src="bilder/left-arrow-angle.png"></button>
+        </div>
+        <div class="imgs">
+            <img class="images" src="bilder/slideshow/apple.png">
+            <img class="images" src="bilder/slideshow/strawberry.png">
+            <img class="images" src="bilder/slideshow/orange.png">
+            <img class="images" src="bilder/slideshow/banana.png">
+            <img class="images" src="bilder/slideshow/carrot.png">
+            <img class="images" src="bilder/slideshow/lemon.png">
+            <img class="images" src="bilder/slideshow/pineapple.png">
+
+            <div class="ctrl">
+                <button class="control-buttons" onclick="setPointer(1)">1</button>
+                <button class="control-buttons" onclick="setPointer(2)">2</button>
+                <button class="control-buttons" onclick="setPointer(3)">3</button>
+                <button class="control-buttons" onclick="setPointer(4)">4</button>
+                <button class="control-buttons" onclick="setPointer(5)">5</button>
+                <button class="control-buttons" onclick="setPointer(6)">6</button>
+                <button class="control-buttons" onclick="setPointer(7)">7</button>
+            </div>
+        </div>
+        <div class="button-right">
+            <button class="slide_buttons" onclick="nextImg(1)"><img class="arrows" src="bilder/right-arrow-angle.png"></button>
+
+        </div>
+    <script language="JavaScript" type="text/javascript">
+
+        window.setInterval("nextImg(1)", 3500);
+
+        var pointer = 1;
+        changeImg(pointer);
+
+        function setPointer(n) {
+            pointer = n;
+            changeImg(pointer);
+        }
+
+        function nextImg(n) {
+            changeImg(pointer += n);
+        }
+
+        function changeImg(n) {
+            var y = document.getElementsByClassName("control-buttons");
+            var x = document.getElementsByClassName("images");
+            if (n > x.length) {pointer = x.length}
+            if (n < 1) { pointer = 1}
+            for (var i = 0; i < x.length; i++) {
+                x[i].style.display = "none";
+            }
+            for (var j = 0; j < y.length; j++) {
+                y[j].style.backgroundColor = "transparent";
+            }
+            jQuery(x[pointer-1]).fadeIn(1800);
+
+            y[pointer-1].style.backgroundColor = "#488B49";
+
+        }
+
+
+    </script>
+
+    </div>
+
+    <div class="accordion">
+        <h3>Über uns</h3>
+        <div id="uberuns">
+            <p>Smoothies sind lecker Smoothies sind lecker Smoothies sind lecker Smoothies sind lecker Smoothies sind lecker Smoothies sind lecker Smoothies sind lecker Smoothies sind lecker Smoothies sind lecker Smoothies sind lecker Smoothies sind lecker Smoothies sind lecker Smoothies sind lecker Smoothies sind lecker Smoothies sind lecker Smoothies sind lecker Smoothies sind lecker Smoothies sind lecker Smoothies sind lecker Smoothies sind lecker Smoothies sind lecker Smoothies sind lecker Smoothies sind lecker Smoothies sind lecker Smoothies sind lecker Smoothies sind lecker Smoothies sind lecker Smoothies sind lecker Smoothies sind lecker Smoothies sind lecker Smoothies sind lecker Smoothies sind lecker Smoothies sind lecker Smoothies sind lecker Smoothies sind lecker Smoothies sind lecker Smoothies sind lecker Smoothies sind lecker Smoothies sind lecker Smoothies sind lecker Smoothies sind lecker Smoothies sind lecker Smoothies sind lecker Smoothies sind lecker Smoothies sind lecker Smoothies sind lecker Smoothies sind lecker Smoothies sind lecker Smoothies sind lecker Smoothies sind lecker Smoothies sind lecker Smoothies sind lecker Smoothies sind lecker Smoothies sind lecker Smoothies sind lecker Smoothies sind lecker Smoothies sind lecker Smoothies sind lecker Smoothies sind lecker Smoothies sind lecker Smoothies sind lecker Smoothies sind lecker Smoothies sind lecker Smoothies sind lecker Smoothies sind lecker Smoothies sind lecker Smoothies sind lecker Smoothies sind lecker Smoothies sind lecker Smoothies sind lecker Smoothies sind lecker Smoothies sind lecker Smoothies sind lecker Smoothies sind lecker Smoothies sind lecker Smoothies sind lecker Smoothies sind lecker Smoothies sind lecker Smoothies sind lecker Smoothies sind lecker Smoothies sind lecker Smoothies sind lecker Smoothies sind lecker Smoothies sind lecker Smoothies sind lecker Smoothies sind lecker Smoothies sind lecker Smoothies sind lecker Smoothies sind lecker Smoothies sind lecker Smoothies sind lecker Smoothies sind lecker Smoothies sind lecker Smoothies sind lecker Smoothies sind lecker Smoothies sind lecker Smoothies sind lecker Smoothies sind lecker Smoothies sind lecker Smoothies sind lecker Smoothies sind lecker Smoothies sind lecker Smoothies sind lecker Smoothies sind lecker Smoothies sind lecker Smoothies sind lecker Smoothies sind lecker Smoothies sind lecker Smoothies sind lecker Smoothies sind lecker Smoothies sind lecker Smoothies sind lecker Smoothies sind lecker Smoothies sind lecker Smoothies sind lecker Smoothies sind lecker Smoothies sind lecker Smoothies sind lecker Smoothies sind lecker Smoothies sind lecker Smoothies sind lecker Smoothies sind lecker Smoothies sind lecker Smoothies sind lecker Smoothies sind lecker Smoothies sind lecker Smoothies sind lecker Smoothies sind lecker Smoothies sind lecker Smoothies sind lecker Smoothies sind lecker Smoothies sind lecker Smoothies sind lecker Smoothies sind lecker Smoothies sind lecker Smoothies sind lecker Smoothies sind lecker Smoothies sind lecker Smoothies sind lecker Smoothies sind lecker Smoothies sind lecker Smoothies sind lecker Smoothies sind lecker Smoothies sind lecker
+            </p>
+        </div>
+        <h3>Disclaimer</h3>
+        <div id="disclaimer">
+            <p><b>Haftungsausschluss</b></p>
+                <p>1. Inhalt des Onlineangebotes</p>
+
+                <p>Der Autor übernimmt keinerlei Gewähr für die Aktualität, Richtigkeit und Vollständigkeit der bereitgestellten Informationen auf unserer Website. Haftungsansprüche gegen den Autor, welche sich auf Schäden materieller oder ideeller Art beziehen, die durch die Nutzung oder Nichtnutzung der dargebotenen Informationen bzw. durch die Nutzung fehlerhafter und unvollständiger Informationen verursacht wurden, sind grundsätzlich ausgeschlossen, sofern seitens des Autors kein nachweislich vorsätzliches oder grob fahrlässiges Verschulden vorliegt. Alle Angebote sind freibleibend und unverbindlich. Der Autor behält es sich ausdrücklich vor, Teile der Seiten oder das gesamte Angebot ohne gesonderte Ankündigung zu verändern, zu ergänzen, zu löschen oder die Veröffentlichung zeitweise oder endgültig einzustellen.
+                </p>
+                <p>2. Verweise und Links
+                </p>
+                <p>Bei direkten oder indirekten Verweisen auf fremde Webseiten (“Hyperlinks”), die außerhalb des Verantwortungsbereiches des Autors liegen, würde eine Haftungsverpflichtung ausschließlich in dem Fall in Kraft treten, in dem der Autor von den Inhalten Kenntnis hat und es ihm technisch möglich und zumutbar wäre, die Nutzung im Falle rechtswidriger Inhalte zu verhindern. Der Autor erklärt hiermit ausdrücklich, dass zum Zeitpunkt der Linksetzung keine illegalen Inhalte auf den zu verlinkenden Seiten erkennbar waren. Auf die aktuelle und zukünftige Gestaltung, die Inhalte oder die Urheberschaft der verlinkten/verknüpften Seiten hat der Autor keinerlei Einfluss. Deshalb distanziert er sich hiermit ausdrücklich von allen Inhalten aller verlinkten /verknüpften Seiten, die nach der Linksetzung verändert wurden. Diese Feststellung gilt für alle innerhalb des eigenen Internetangebotes gesetzten Links und Verweise sowie für Fremdeinträge in vom Autor eingerichteten Gästebüchern, Diskussionsforen, Linkverzeichnissen, Mailinglisten und in allen anderen Formen von Datenbanken, auf deren Inhalt externe Schreibzugriffe möglich sind. Für illegale, fehlerhafte oder unvollständige Inhalte und insbesondere für Schäden, die aus der Nutzung oder Nichtnutzung solcherart dargebotener Informationen entstehen, haftet allein der Anbieter der Seite, auf welche verwiesen wurde, nicht derjenige, der über Links auf die jeweilige Veröffentlichung lediglich verweist.
+                </p>
+                <p>3. Urheber- und Kennzeichenrecht
+                </p>
+                <p>Der Autor ist bestrebt, in allen Publikationen die Urheberrechte der verwendeten Bilder, Grafiken, Tondokumente, Videosequenzen und Texte zu beachten, von ihm selbst erstellte Bilder, Grafiken, Tondokumente, Videosequenzen und Texte zu nutzen oder auf lizenzfreie Grafiken, Tondokumente, Videosequenzen und Texte zurückzugreifen. Alle innerhalb des Internetangebotes genannten und ggf. durch Dritte geschützten Marken- und Warenzeichen unterliegen uneingeschränkt den Bestimmungen des jeweils gültigen Kennzeichenrechts und den Besitzrechten der jeweiligen eingetragenen Eigentümer. Allein aufgrund der bloßen Nennung ist nicht der Schluss zu ziehen, dass Markenzeichen nicht durch Rechte Dritter geschützt sind! Das Copyright für veröffentlichte, vom Autor selbst erstellte Objekte bleibt allein beim Autor der Seiten. Eine Vervielfältigung oder Verwendung solcher Grafiken, Tondokumente, Videosequenzen und Texte in anderen elektronischen oder gedruckten Publikationen ist ohne ausdrückliche Zustimmung des Autors nicht gestattet.
+                </p>
+                <p>4. Datenschutz
+                </p>
+                <p>Sofern innerhalb des Internetangebotes die Möglichkeit zur Eingabe persönlicher oder geschäftlicher Daten (Emailadressen, Namen, Anschriften) besteht, so erfolgt die Preisgabe dieser Daten seitens des Nutzers auf ausdrücklich freiwilliger Basis. Die Inanspruchnahme und Bezahlung aller angebotenen Dienste ist – soweit technisch möglich und zumutbar – auch ohne Angabe solcher Daten bzw. unter Angabe anonymisierter Daten oder eines Pseudonyms gestattet. Die Nutzung der im Rahmen des Impressums oder vergleichbarer Angaben veröffentlichten Kontaktdaten wie Postanschriften, Telefon- und Faxnummern sowie Emailadressen durch Dritte zur Übersendung von nicht ausdrücklich angeforderten Informationen ist nicht gestattet. Rechtliche Schritte gegen die Versender von sogenannten Spam-Mails bei Verstössen gegen dieses Verbot sind ausdrücklich vorbehalten.
+                </p>
+                <p>8. Rechtswirksamkeit dieses Haftungsausschlusses
+                </p>
+                <p>Dieser Haftungsausschluss/Disclaimer ist als Teil des Internetangebotes zu betrachten, von dem aus auf diese Seite verwiesen wurde. Sofern Teile oder einzelne Formulierungen dieses Textes der geltenden Rechtslage nicht, nicht mehr oder nicht vollständig entsprechen sollten, bleiben die übrigen Teile des Dokumentes in ihrem Inhalt und ihrer Gültigkeit davon unberührt.
+                </p>
+                <p>Quelle: Haftungsausschluss.org
+                </p>
+        </div>
+
+        <h3>Kontakt/Impressum</h3>
+        <div id="impressum">
+            <p><b>Impressum</b></p>
+            <p>Juicy Smoothie GmbH</p>
+            <p>Smoothie-Straße 1, 70182 Stuttgart</p>
+            <p>Geschäftsführung, Prokura und Webmaster: Tobias Reumann (tr064@hdm-stuttgart.de, 29511)</p>
+            <p>mail: info@juicysmoothie.com</p>
+            <p>tel: 0711 1234 4578-9</p>
+            <p><b>USt-ID:</b> DE 123 456 789</p>
+            <p><b>sitz:</b> Stuttgart, Amtsgericht Stuttgart, HRB 123 445</p>
+
+
+        </div>
+
+
+
+
+
+    </div>
+</div>
+</body>
+</html>
