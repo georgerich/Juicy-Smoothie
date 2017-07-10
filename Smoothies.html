@@ -155,11 +155,7 @@
             }
         });
 
-        jQuery(".d3" ).accordion({
-            collapsible: true,
-            heightStyle: "content",
-            //active: false
-        });
+
 
         jQuery("#bestellbutton").click(function () {
             jQuery('html, body').animate({ scrollTop: (jQuery(".form").offset().top)}, 'slow');
@@ -351,12 +347,35 @@
 
     </div>
     <div class="d3">
-        <h3>Nährwertangaben</h3>
+        <h3 class="uberschriften">Nährwertangaben/100g</h3>
+        <div>
+            <div id="werte">
+
+                <div class="wertepaar">
+                    <p>Kalorien</p>
+                    <p id="kalorien" class="ziffern"></p>
+                </div>
+
+                <div class="wertepaar">
+                    <p>Fett</p>
+                    <p id="fett" class="ziffern"></p>
+            </div>
+
+            <div class=" wertepaar">
+                    <p>Kohlenhydrate</p>
+                    <p id="kohlenhydrate" class="ziffern"></p>
+            </div>
+
+            <div class=" wertepaar">
+                    <p>Eiweiß</p>
+                    <p id="eiweiss" class="ziffern"></p>
+            </div>
+        </div>
         <div id="balkendiagramm">
 
 
         </div>
-
+        </div>
     </div>
 
         <script>
@@ -368,10 +387,10 @@
 
 
             var width = "100%";
-            var height = 400;
+            var height = 300;
 
             var widthScale = d3.scaleLinear()
-                .domain([0, 300])
+                .domain([0, 250])
                 .range([0, width]);
             ﻿
 
@@ -392,9 +411,11 @@
 
 
 
-
+            var oldValues = [0,0,0,0];
 
             function getNahrwerte() {
+
+                console.log(oldValues);
                 var u = jQuery("#inhalt").find(".element");
                 var kalorien = 0;
                 var fett = 0;
@@ -410,7 +431,13 @@
                     }
                 }
                 var newDataArray = [kalorien, fett, kohlenhydrate, eiweiss];
+
                 console.log(newDataArray);
+
+                jQuery("#kalorien").html(newDataArray[0]);
+                jQuery("#fett").html(newDataArray[1]);
+                jQuery("#kohlenhydrate").html(newDataArray[2]);
+                jQuery("#eiweiss").html(newDataArray[3]);
 
                 bars.data(newDataArray);
 
@@ -422,8 +449,18 @@
 
 
 
-
-
+                jQuery('.ziffern').each(function (index) {
+                    var $this = jQuery(this);
+                    console.log(oldValues[index]);
+                    jQuery({ Counter: oldValues[index] }).animate({ Counter: $this.text() }, {
+                        duration: 1000,
+                        easing: 'swing',
+                        step: function () {
+                            $this.text(Math.ceil(this.Counter));
+                        }
+                    });
+                });
+                oldValues= newDataArray;
             }
 
 
