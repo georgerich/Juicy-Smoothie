@@ -367,8 +367,8 @@
             var dataArray = [10, 20, 30, 40];
 
 
-            var width = 800;
-            var height = 550;
+            var width = "100%";
+            var height = 400;
 
             var widthScale = d3.scaleLinear()
                 .domain([0, 300])
@@ -385,8 +385,9 @@
                 .enter()
                 .append("rect")
                 .attr("width", function (d) {return widthScale(d);})
-                .attr("height", 35)
-                .attr("y", function (d, i) {return i * 100});
+                .attr("height", 20)
+                .attr("y", function (d, i) {return i * 80});
+
 
 
 
@@ -413,13 +414,12 @@
 
                 bars.data(newDataArray);
 
-                bars.text(function(d) { return d});
 
                 bars.transition()
                     .delay(300)
                     .duration(1000)
                     .attr("width", function (d) {return widthScale(d);})
-                    .attr("x", 50);
+
 
 
 

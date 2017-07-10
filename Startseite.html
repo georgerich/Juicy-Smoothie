@@ -130,7 +130,9 @@
             for (var j = 0; j < y.length; j++) {
                 y[j].style.backgroundColor = "transparent";
             }
-            jQuery(x[pointer-1]).fadeIn(1800);
+            if(pointer<x.length){jQuery(x[pointer-1]).fadeIn(1800);}
+            else{x[pointer-1].style.display = "block";}
+
 
             y[pointer-1].style.backgroundColor = "#488B49";
 
