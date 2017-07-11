@@ -19,6 +19,10 @@
     <link rel="stylesheet" type="text/css" href="Navbar.css">
     <link rel="stylesheet" type="text/css" href="Smoothie.css">
 
+    <noscript>
+        <link rel="stylesheet" type="text/css" href="NoScript.css">
+    </noscript>
+
     <script type="text/javascript">
         jQuery(document).ready(function () {
             jQuery.noConflict();
@@ -52,23 +56,23 @@
                                 droppedElements++;
 
                                 if (droppedElements === 1) {
-                                    jQuery("#fuellElement1").animate({width: '20%'});
+                                    jQuery("#fuellElement1").animate({width: '15%'});
                                 }
 
                                 if (droppedElements === 2) {
-                                    jQuery("#fuellElement2").animate({width: '23%'});
+                                    jQuery("#fuellElement2").animate({width: '17%'});
                                 }
 
                                 if (droppedElements === 3) {
-                                    jQuery("#fuellElement3").animate({width: '26%'});
+                                    jQuery("#fuellElement3").animate({width: '19%'});
                                 }
 
                                 if (droppedElements === 4) {
-                                    jQuery("#fuellElement4").animate({width: '29%'});
+                                    jQuery("#fuellElement4").animate({width: '22%'});
                                 }
 
                                 if (droppedElements === 5) {
-                                    jQuery("#fuellElement5").animate({width: '33%'});
+                                    jQuery("#fuellElement5").animate({width: '24%'});
                                 }
                             }
 
@@ -128,23 +132,23 @@
                 }
 
                 if (droppedElements === 1) {
-                    jQuery("#fuellElement1").animate({width: '20%'});
+                    jQuery("#fuellElement1").animate({width: '15%'});
                 }
 
                 if (droppedElements === 2) {
-                    jQuery("#fuellElement2").animate({width: '23%'});
+                    jQuery("#fuellElement2").animate({width: '17%'});
                 }
 
                 if (droppedElements === 3) {
-                    jQuery("#fuellElement3").animate({width: '26%'});
+                    jQuery("#fuellElement3").animate({width: '19%'});
                 }
 
                 if (droppedElements === 4) {
-                    jQuery("#fuellElement4").animate({width: '29%'});
+                    jQuery("#fuellElement4").animate({width: '22%'});
                 }
 
                 if (droppedElements === 5) {
-                    jQuery("#fuellElement5").animate({width: '33%'});
+                    jQuery("#fuellElement5").animate({width: '24%'});
                 }
 
                 if (droppedElements > 5) {
@@ -178,11 +182,12 @@
     <div id="navbar">
 
         <li class="dropdown">
-            <a class="dropbtn" href="Startseite.html"><b> Menü</b></a>
+            <a class="dropbtn" onclick="fadeIn1()"><b> Menü</b></a>
             <div class="dropdown-content">
 
                 <div id="stufe2-link1">
-                    <a href="Startseite.html"><img id="hut" src="bilder/hut.png"> Startseite</a>
+                    <noscript><a href="Startseite.html"><img id="hut" src="bilder/hut.png"> Startseite</a></noscript>
+                    <a onclick="fadeOut2()" id="nav"><img id="hut" src="bilder/hut.png"> Startseite</a>
                     <div class="stufe3" id="stufe3-link1">
 
 
@@ -190,7 +195,7 @@
                 </div>
 
                 <div id="stufe2-link2">
-                    <a href="#"><img id="straw" src="bilder/strawberry.png"> Produkte</a>
+                    <a onclick="fadeIn2()"><img id="straw" src="bilder/strawberry.png"> Produkte</a>
                     <div class="stufe3" id="stufe3-link2">
                         <a href="Smoothies.html"><img src="bilder/smoothie_icon.png" id="smoothie-icon">Smoothies</a>
                     </div>
@@ -199,16 +204,35 @@
 
             </div>
         </li>
+
+        <script>
+            function fadeIn1() {
+                jQuery(".dropdown-content").toggle("size", "easeOutBounce", 1000);
+            }
+
+            function fadeIn2() {
+                jQuery("#stufe3-link2").toggle("Bounce", "easeOutBounce", 4000);
+            }
+
+            function fadeOut2(){
+                jQuery(".container").hide("Bounce", "linear", 2000, u());
+
+            }
+
+            function u(){window.location.href = "Startseite.html" };
+
+        </script>
     </div>
 
-    <div class="erlauterungen">
-        <p>Hier können Sie sich Ihren ganz persönlichen Smoothie zusammenstellen</p>
-        <p>Um Zutaten hinzuzufügen, diese einfach per Drag and Drop auf den Becher ziehen.</p>
-        <p>Um Zutaten zu entfernen, ziehen Sie diese wieder zurück in eine Reihe mit einer freien Stelle</p>
-    </div>
+
 
 
     <div class="smoothie">
+        <div class="erlauterungen">
+            <p>Hier können Sie sich Ihren ganz persönlichen Smoothie zusammenstellen</p>
+            <p>Um Zutaten hinzuzufügen, diese einfach per Drag and Drop auf den Becher ziehen.</p>
+            <p>Um Zutaten zu entfernen, ziehen Sie diese wieder zurück in eine Reihe mit einer freien Stelle</p>
+        </div>
         <div class="glaso">
             <img id="glas" src="bilder/Element1.png">
             <img id="fuellElement1" src="bilder/Element3.png">
@@ -216,7 +240,7 @@
             <img id="fuellElement3"  src="bilder/Element5.png">
             <img id="fuellElement4" src="bilder/Element6.png">
             <img id="fuellElement5"  src="bilder/Element7.png">
-            <img id="arrow2" src="bilder/Curved_Arrow.svg.png">
+            <img id="arrow2" src="bilder/Curved_Arrow_mirrored.png">
         </div>
 
 
@@ -280,72 +304,14 @@
         </div>
     </div>
 
+
+
     <div class="inhaltsliste">
         <h3 class="uberschriften">Hinzugefügte Zutaten:</h3>
         <div id="inhalt"></div>
         <img id="arrow" src="bilder/Curved_Arrow.svg.png">
     </div>
-    <div class="bestellen">
-        <button id="bestellbutton" class="bestellbutton"><img id="mixer" src="bilder/mixer.png"><b>Bestellen</b>
-        </button>
-        <div class="messg">
-            <p id="message"></p>
-        </div>
-        <div class="hotline">
 
-            <img id="hotline_img" src="bilder/hotline.png">
-
-            <div class="ps">
-                <p><b>Haben Sie Fragen?</b></p>
-                <br>
-                <p id="hotline">Unsere Hotline ist täglich zwischen 8h und 17h für Sie da</p>
-                <br>
-                <p>Momentan ist unsere Hotline
-                <p id="countdwn"></p>: <p id="status">Offline</p></p>
-            </div>
-        </div>
-
-        <script>
-
-            var countdown = setInterval(counter, 1000);
-            var closing = new Date().setHours(19,0);
-            var opening = new Date().setHours(8,0);
-            var hotlineClose = new Date().setHours(17,0);
-
-            function counter() {
-            var today = new Date();
-
-            var distClosing = closing - today.getTime();
-            var distHotline = hotlineClose - today.getTime();
-
-
-
-            if(distClosing>0) {
-
-                var hours = Math.floor((distClosing % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
-                var minutes = Math.floor((distClosing % (1000 * 60 * 60)) / (1000 * 60));
-                var seconds = Math.floor((distClosing % (1000 * 60)) / 1000);
-                document.getElementById("message").innerHTML = "<b>Wir produzieren täglich von 8h bis 19h. Wenn Sie innerhalb von <a class='countdown'>"+hours+"h "+minutes+"m "+seconds+"s </a>bestellen, wird Ihr Smoothie noch heute zubereitet und versandt!</b>";
-            }
-            else {
-                document.getElementById("message").innerHTML ="<b>Wir produzieren täglich von 8h bis 19h. Geben Sie Ihre Bestellung auf, wir werden Ihren Smoothie morgen frisch für Sie zubereiten</b>";
-            }
-
-            if((today.getTime()>opening)&&(today.getTime()<hotlineClose)){
-                var hours2 = Math.floor((distHotline % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
-                var minutes2 = Math.floor((distHotline % (1000 * 60 * 60)) / (1000 * 60));
-                var seconds2 = Math.floor((distHotline % (1000 * 60)) / 1000);
-                document.getElementById("countdwn").innerHTML = " noch für "+hours2+"h "+minutes2+"m "+seconds2+"s ";
-                document.getElementById("status").innerHTML = "<p style='color: green'>Online</p>";
-            }
-            else{
-                document.getElementById("status").innerHTML = "<p style='color: red'>Offline</p>";
-                document.getElementById("countdwn").innerHTML = "";
-            }
-            }
-        </script>
-
-    </div>
     <div class="d3">
         <h3 class="uberschriften">Nährwertangaben/100g</h3>
         <div>
@@ -404,8 +370,8 @@
                 .enter()
                 .append("rect")
                 .attr("width", function (d) {return widthScale(d);})
-                .attr("height", 20)
-                .attr("y", function (d, i) {return i * 80});
+                .attr("height", 25)
+                .attr("y", function (d, i) {return i * 50});
 
 
 
@@ -467,7 +433,66 @@
 
         </script>
 
+    <div class="bestellen">
+        <button id="bestellbutton" class="bestellbutton"><img id="mixer" src="bilder/mixer.png"><b>Bestellen</b>
+        </button>
+        <div class="messg">
+            <p id="message"></p>
+        </div>
+        <div class="hotline">
 
+            <img id="hotline_img" src="bilder/hotline.png">
+
+            <div class="ps">
+                <p><b>Haben Sie Fragen?</b></p>
+                <br>
+                <p id="hotline">Unsere Hotline ist täglich zwischen 8h und 17h für Sie da. </p>
+                <p>Momentan ist unsere Hotline
+                <p id="countdwn"></p>: <p id="status">Offline</p></p>
+            </div>
+        </div>
+
+        <script>
+
+            var countdown = setInterval(counter, 1000);
+            var closing = new Date().setHours(19,0);
+            var opening = new Date().setHours(8,0);
+            var hotlineClose = new Date().setHours(17,0);
+
+            function counter() {
+                var today = new Date();
+
+                var distClosing = closing - today.getTime();
+                var distHotline = hotlineClose - today.getTime();
+
+
+
+                if(distClosing>0) {
+
+                    var hours = Math.floor((distClosing % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+                    var minutes = Math.floor((distClosing % (1000 * 60 * 60)) / (1000 * 60));
+                    var seconds = Math.floor((distClosing % (1000 * 60)) / 1000);
+                    document.getElementById("message").innerHTML = "<b>Wir produzieren täglich von 8h bis 19h. Wenn Sie innerhalb von <a class='countdown'>"+hours+"h "+minutes+"m "+seconds+"s </a>bestellen, wird Ihr Smoothie noch heute zubereitet und versandt!</b>";
+                }
+                else {
+                    document.getElementById("message").innerHTML ="<b>Wir produzieren täglich von 8h bis 19h. Geben Sie Ihre Bestellung auf, wir werden Ihren Smoothie morgen frisch für Sie zubereiten</b>";
+                }
+
+                if((today.getTime()>opening)&&(today.getTime()<hotlineClose)){
+                    var hours2 = Math.floor((distHotline % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+                    var minutes2 = Math.floor((distHotline % (1000 * 60 * 60)) / (1000 * 60));
+                    var seconds2 = Math.floor((distHotline % (1000 * 60)) / 1000);
+                    document.getElementById("countdwn").innerHTML = " noch für "+hours2+"h "+minutes2+"m "+seconds2+"s ";
+                    document.getElementById("status").innerHTML = "<p style='color: green'>Online</p>";
+                }
+                else{
+                    document.getElementById("status").innerHTML = "<p style='color: red'>Offline</p>";
+                    document.getElementById("countdwn").innerHTML = "";
+                }
+            }
+        </script>
+
+    </div>
 
     <div class="form">
         <h3 class="uberschriften">Bestelldaten:</h3>
@@ -505,6 +530,7 @@
             <div id="listi">
 
             </div>
+            <p id="hinweis"></p>
         </div>
 
 
@@ -573,6 +599,9 @@
 
         }
 
+        if(navigator.language !== "de"){
+            jQuery("#hinweis").html("Please consider, that you have to pay higher delivery charges, when ordering from outside of Germany");
+        }
 
 
     </script>

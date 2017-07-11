@@ -1,0 +1,21 @@
+
+#stufe2-link1:hover #stufe3-link1{
+    display: inline-block;
+    top: 0;
+}
+#stufe2-link2:hover #stufe3-link2{
+    display: block;
+    top: 52.5px;
+}
+#stufe2-link3:hover #stufe3-link3{
+    display: block;
+    top: 102px;
+}
+.dropdown:hover .dropdown-content {
+    display: block;
+
+}
+
+#nav{
+    display: none;
+}

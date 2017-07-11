@@ -49,10 +49,7 @@ li.dropdown {
     color: black;
     background-color: #7DB95C}
 
-.dropdown:hover .dropdown-content {
-    display: block;
 
-}
 
 
 
@@ -80,16 +77,13 @@ li.dropdown {
 .stufe3 a{
     user-select: none;
 }
-
-#stufe2-link1:hover #stufe3-link1{
-    display: inline-block;
+#stufe3-link1{
     top: 0;
 }
-#stufe2-link2:hover #stufe3-link2{
-    display: block;
+#stufe3-link2{
     top: 52.5px;
 }
-#stufe2-link3:hover #stufe3-link3{
-    display: block;
+#stufe3-link3{
+
     top: 102px;
 }

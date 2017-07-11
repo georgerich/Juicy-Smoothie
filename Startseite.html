@@ -20,6 +20,10 @@
 
     <script src="https://code.jquery.com/jquery-1.12.4.js"></script>
     <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
+    <noscript>
+        <link rel="stylesheet" type="text/css" href="NoScript.css">
+    </noscript>
+
     <script>
         jQuery(document).ready(function() {
             jQuery(".accordion" ).accordion({
@@ -41,19 +45,20 @@
     <div id="navbar">
 
         <li class="dropdown">
-            <a class="dropbtn" href="Startseite.html"><b> Menü</b></a>
+            <a class="dropbtn" onclick="fadeIn1()"><b> Menü</b></a>
             <div class="dropdown-content">
 
                 <div id="stufe2-link1">
-                    <a href="Startseite.html"><img id="hut" src="bilder/hut.png"> Startseite</a>
+                    <noscript><a href="Startseite.html"><img id="hut" src="bilder/hut.png"> Startseite</a></noscript>
+                    <a onclick="fadeOut2()" id="nav"><img id="hut" src="bilder/hut.png"> Startseite</a>
                     <div class="stufe3" id="stufe3-link1">
-                        
+
 
                     </div>
                 </div>
 
                 <div id="stufe2-link2">
-                    <a href="#"><img id="straw" src="bilder/strawberry.png"> Produkte</a>
+                    <a onclick="fadeIn2()"><img id="straw" src="bilder/strawberry.png"> Produkte</a>
                     <div class="stufe3" id="stufe3-link2">
                         <a href="Smoothies.html"><img src="bilder/smoothie_icon.png" id="smoothie-icon">Smoothies</a>
                     </div>
@@ -63,8 +68,23 @@
             </div>
         </li>
 
+        <script>
+            function fadeIn1() {
+                jQuery(".dropdown-content").toggle("size", "easeOutBounce", 1000);
+            }
 
+            function fadeIn2() {
+                jQuery("#stufe3-link2").toggle("Bounce", "easeOutBounce", 4000);
+            }
 
+            function fadeOut2(){
+                jQuery(".container").hide("Bounce", "linear", 2000, u());
+
+            }
+
+            function u(){window.location.href = "Startseite.html" };
+
+        </script>
     </div>
 
 <!-- Slideshow mit allen Bildern und Buttons sowie dem notwenigen Code in Java Script-->
@@ -138,8 +158,29 @@
     <div class="accordion">
         <h3>Über uns</h3>
         <div id="uberuns">
-            <p>Smoothies sind lecker Smoothies sind lecker Smoothies sind lecker Smoothies sind lecker Smoothies sind lecker Smoothies sind lecker Smoothies sind lecker Smoothies sind lecker Smoothies sind lecker Smoothies sind lecker Smoothies sind lecker Smoothies sind lecker Smoothies sind lecker Smoothies sind lecker Smoothies sind lecker Smoothies sind lecker Smoothies sind lecker Smoothies sind lecker Smoothies sind lecker Smoothies sind lecker Smoothies sind lecker Smoothies sind lecker Smoothies sind lecker Smoothies sind lecker Smoothies sind lecker Smoothies sind lecker Smoothies sind lecker Smoothies sind lecker Smoothies sind lecker Smoothies sind lecker Smoothies sind lecker Smoothies sind lecker Smoothies sind lecker Smoothies sind lecker Smoothies sind lecker Smoothies sind lecker Smoothies sind lecker Smoothies sind lecker Smoothies sind lecker Smoothies sind lecker Smoothies sind lecker Smoothies sind lecker Smoothies sind lecker Smoothies sind lecker Smoothies sind lecker Smoothies sind lecker Smoothies sind lecker Smoothies sind lecker Smoothies sind lecker Smoothies sind lecker Smoothies sind lecker Smoothies sind lecker Smoothies sind lecker Smoothies sind lecker Smoothies sind lecker Smoothies sind lecker Smoothies sind lecker Smoothies sind lecker Smoothies sind lecker Smoothies sind lecker Smoothies sind lecker Smoothies sind lecker Smoothies sind lecker Smoothies sind lecker Smoothies sind lecker Smoothies sind lecker Smoothies sind lecker Smoothies sind lecker Smoothies sind lecker Smoothies sind lecker Smoothies sind lecker Smoothies sind lecker Smoothies sind lecker Smoothies sind lecker Smoothies sind lecker Smoothies sind lecker Smoothies sind lecker Smoothies sind lecker Smoothies sind lecker Smoothies sind lecker Smoothies sind lecker Smoothies sind lecker Smoothies sind lecker Smoothies sind lecker Smoothies sind lecker Smoothies sind lecker Smoothies sind lecker Smoothies sind lecker Smoothies sind lecker Smoothies sind lecker Smoothies sind lecker Smoothies sind lecker Smoothies sind lecker Smoothies sind lecker Smoothies sind lecker Smoothies sind lecker Smoothies sind lecker Smoothies sind lecker Smoothies sind lecker Smoothies sind lecker Smoothies sind lecker Smoothies sind lecker Smoothies sind lecker Smoothies sind lecker Smoothies sind lecker Smoothies sind lecker Smoothies sind lecker Smoothies sind lecker Smoothies sind lecker Smoothies sind lecker Smoothies sind lecker Smoothies sind lecker Smoothies sind lecker Smoothies sind lecker Smoothies sind lecker Smoothies sind lecker Smoothies sind lecker Smoothies sind lecker Smoothies sind lecker Smoothies sind lecker Smoothies sind lecker Smoothies sind lecker Smoothies sind lecker Smoothies sind lecker Smoothies sind lecker Smoothies sind lecker Smoothies sind lecker Smoothies sind lecker Smoothies sind lecker Smoothies sind lecker Smoothies sind lecker Smoothies sind lecker Smoothies sind lecker Smoothies sind lecker Smoothies sind lecker Smoothies sind lecker Smoothies sind lecker Smoothies sind lecker Smoothies sind lecker Smoothies sind lecker Smoothies sind lecker Smoothies sind lecker Smoothies sind lecker Smoothies sind lecker
+            <p id="de">Smoothies sind lecker Smoothies sind lecker Smoothies sind lecker Smoothies sind lecker Smoothies sind lecker Smoothies sind lecker Smoothies sind lecker Smoothies sind lecker Smoothies sind lecker Smoothies sind lecker Smoothies sind lecker Smoothies sind lecker Smoothies sind lecker Smoothies sind lecker Smoothies sind lecker Smoothies sind lecker Smoothies sind lecker Smoothies sind lecker Smoothies sind lecker Smoothies sind lecker Smoothies sind lecker Smoothies sind lecker Smoothies sind lecker Smoothies sind lecker Smoothies sind lecker Smoothies sind lecker Smoothies sind lecker Smoothies sind lecker Smoothies sind lecker Smoothies sind lecker Smoothies sind lecker Smoothies sind lecker Smoothies sind lecker Smoothies sind lecker Smoothies sind lecker Smoothies sind lecker Smoothies sind lecker Smoothies sind lecker Smoothies sind lecker Smoothies sind lecker Smoothies sind lecker Smoothies sind lecker Smoothies sind lecker Smoothies sind lecker Smoothies sind lecker Smoothies sind lecker Smoothies sind lecker Smoothies sind lecker Smoothies sind lecker Smoothies sind lecker Smoothies sind lecker Smoothies sind lecker Smoothies sind lecker Smoothies sind lecker Smoothies sind lecker Smoothies sind lecker Smoothies sind lecker Smoothies sind lecker Smoothies sind lecker Smoothies sind lecker Smoothies sind lecker Smoothies sind lecker Smoothies sind lecker Smoothies sind lecker Smoothies sind lecker Smoothies sind lecker Smoothies sind lecker Smoothies sind lecker Smoothies sind lecker Smoothies sind lecker Smoothies sind lecker Smoothies sind lecker Smoothies sind lecker Smoothies sind lecker Smoothies sind lecker Smoothies sind lecker Smoothies sind lecker Smoothies sind lecker Smoothies sind lecker Smoothies sind lecker Smoothies sind lecker Smoothies sind lecker Smoothies sind lecker Smoothies sind lecker Smoothies sind lecker Smoothies sind lecker Smoothies sind lecker Smoothies sind lecker Smoothies sind lecker Smoothies sind lecker Smoothies sind lecker Smoothies sind lecker Smoothies sind lecker Smoothies sind lecker Smoothies sind lecker Smoothies sind lecker Smoothies sind lecker Smoothies sind lecker Smoothies sind lecker Smoothies sind lecker Smoothies sind lecker Smoothies sind lecker Smoothies sind lecker Smoothies sind lecker Smoothies sind lecker Smoothies sind lecker Smoothies sind lecker Smoothies sind lecker Smoothies sind lecker Smoothies sind lecker Smoothies sind lecker Smoothies sind lecker Smoothies sind lecker Smoothies sind lecker Smoothies sind lecker Smoothies sind lecker Smoothies sind lecker Smoothies sind lecker Smoothies sind lecker Smoothies sind lecker Smoothies sind lecker Smoothies sind lecker Smoothies sind lecker Smoothies sind lecker Smoothies sind lecker Smoothies sind lecker Smoothies sind lecker Smoothies sind lecker Smoothies sind lecker Smoothies sind lecker Smoothies sind lecker Smoothies sind lecker Smoothies sind lecker Smoothies sind lecker Smoothies sind lecker Smoothies sind lecker Smoothies sind lecker Smoothies sind lecker Smoothies sind lecker Smoothies sind lecker Smoothies sind lecker Smoothies sind lecker Smoothies sind lecker Smoothies sind lecker
             </p>
+            <p id="en">Smoothies are awesome Smoothies are awesome Smoothies are awesome Smoothies are awesome Smoothies are awesome Smoothies are awesome Smoothies are awesome Smoothies are awesome Smoothies are awesome Smoothies are awesome Smoothies are awesome Smoothies are awesome Smoothies are awesome Smoothies are awesome Smoothies are awesome Smoothies are awesome Smoothies are awesome Smoothies are awesome Smoothies are awesome Smoothies are awesome Smoothies are awesome Smoothies are awesome Smoothies are awesome Smoothies are awesome Smoothies are awesome Smoothies are awesome Smoothies are awesome Smoothies are awesome Smoothies are awesome Smoothies are awesome Smoothies are awesome Smoothies are awesome Smoothies are awesome Smoothies are awesome Smoothies are awesome Smoothies are awesome Smoothies are awesome Smoothies are awesome Smoothies are awesome Smoothies are awesome Smoothies are awesome Smoothies are awesome Smoothies are awesome Smoothies are awesome Smoothies are awesome Smoothies are awesome Smoothies are awesome Smoothies are awesome Smoothies are awesome Smoothies are awesome Smoothies are awesome Smoothies are awesome Smoothies are awesome Smoothies are awesome Smoothies are awesome Smoothies are awesome Smoothies are awesome Smoothies are awesome Smoothies are awesome Smoothies are awesome Smoothies are awesome Smoothies are awesome Smoothies are awesome Smoothies are awesome Smoothies are awesome Smoothies are awesome Smoothies are awesome Smoothies are awesome Smoothies are awesome Smoothies are awesome Smoothies are awesome Smoothies are awesome Smoothies are awesome Smoothies are awesome Smoothies are awesome Smoothies are awesome Smoothies are awesome Smoothies are awesome Smoothies are awesome Smoothies are awesome Smoothies are awesome Smoothies are awesome Smoothies are awesome Smoothies are awesome Smoothies are awesome Smoothies are awesome Smoothies are awesome Smoothies are awesome Smoothies are awesome Smoothies are awesome Smoothies are awesome Smoothies are awesome Smoothies are awesome Smoothies are awesome Smoothies are awesome Smoothies are awesome Smoothies are awesome Smoothies are awesome Smoothies are awesome Smoothies are awesome Smoothies are awesome Smoothies are awesome Smoothies are awesome Smoothies are awesome Smoothies are awesome Smoothies are awesome Smoothies are awesome Smoothies are awesome Smoothies are awesome Smoothies are awesome Smoothies are awesome Smoothies are awesome Smoothies are awesome Smoothies are awesome Smoothies are awesome Smoothies are awesome Smoothies are awesome Smoothies are awesome Smoothies are awesome Smoothies are awesome Smoothies are awesome Smoothies are awesome Smoothies are awesome Smoothies are awesome Smoothies are awesome Smoothies are awesome Smoothies are awesome Smoothies are awesome Smoothies are awesome Smoothies are awesome Smoothies are awesome Smoothies are awesome Smoothies are awesome Smoothies are awesome Smoothies are awesome Smoothies are awesome Smoothies are awesome Smoothies are awesome Smoothies are awesome Smoothies are awesome Smoothies are awesome Smoothies are awesome Smoothies are awesome Smoothies are awesome
+            </p>
+
+            <p id="de2"><a href="https://de.wikipedia.org/wiki/Smoothie">Erfahren Sie mehr über Smoothies</a></p>
+            <p id="en2"><a href="https://en.wikipedia.org/wiki/Smoothie">Learn more about Smoothies</a></p>
+
+            <script>
+                if (navigator.language === "de"){
+                    document.getElementById("en").style.display = "none";
+                    document.getElementById("en2").style.display = "none";
+                    document.getElementById("de").style.display = "block";
+                    document.getElementById("de2").style.display = "block";
+                }
+                else{
+                    document.getElementById("de").style.display = "none";
+                    document.getElementById("de2").style.display = "none";
+                    document.getElementById("en").style.display = "block";
+                    document.getElementById("en2").style.display = "block";
+                }
+            </script>
+
         </div>
         <h3>Disclaimer</h3>
         <div id="disclaimer">
