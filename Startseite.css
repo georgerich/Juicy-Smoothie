@@ -50,19 +50,6 @@
     outline: 0;
 }
 
-.slide_buttons:hover{
-    transform: translateY(3px);
-    border-bottom: 4px solid #488B49;
-    border-left: 3px solid #488B49;
-}
-
-.slide_buttons:active{
-    background-color: #7DB95C;
-    transform: translateY(6px);
-    border-bottom: 1px solid #488B49;
-    border-left: 1px solid #488B49;
-}
-
 #left{
     float: right;
 }

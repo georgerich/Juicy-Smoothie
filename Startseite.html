@@ -20,11 +20,16 @@
 
     <script src="https://code.jquery.com/jquery-1.12.4.js"></script>
     <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
+
     <noscript>
+        <!-- Um Barrierefreiheit bei bestimmten Elementen sicherzustellen, wird eine gesonderte CSS-Datein eingebunden, die das Styling speziell für diesen Fall übernimmt. -->
         <link rel="stylesheet" type="text/css" href="NoScript.css">
     </noscript>
 
     <script>
+        /*
+        Die Akkorion-Funktion wurde durch die vorgefertigte Funktion .accordion mittels jQuery umgesetzt
+         */
         jQuery(document).ready(function() {
             jQuery(".accordion" ).accordion({
                     collapsible: true,
@@ -49,8 +54,8 @@
             <div class="dropdown-content">
 
                 <div id="stufe2-link1">
-                    <noscript><a href="Startseite.html"><img id="hut" src="bilder/hut.png"> Startseite</a></noscript>
-                    <a onclick="fadeOut2()" id="nav"><img id="hut" src="bilder/hut.png"> Startseite</a>
+                    <noscript><a href="Startseite.html"><img class="hut" src="bilder/hut.png"> Startseite</a></noscript>
+                    <a onclick="fadeOut2()" id="nav"><img class="hut" src="bilder/hut.png"> Startseite</a>
                     <div class="stufe3" id="stufe3-link1">
 
 
@@ -69,6 +74,11 @@
         </li>
 
         <script>
+
+            /*
+            Die Realisierung des 3-stufigen Menüs per JQuery durch div-container die onclick eingeblendet werden.
+            Die gewählte Funktion ist toggle. Die divs wechseln je nach Ausgangszustand ihren Zustand in unsichtbar oder sichtbar.
+             */
             function fadeIn1() {
                 jQuery(".dropdown-content").toggle("size", "easeOutBounce", 1000);
             }
@@ -117,16 +127,57 @@
         </div>
     <script language="JavaScript" type="text/javascript">
 
+        /*
+        Realisierung der 3D-Buttons mittels JQuery:
+        Für jeden Zustand "ohne mauskontakt", "hover", "aktiv/geklicked" wird das Stying der Buttons so geändert, dass der Eindruck von 3-dimensionalitaet entsteht.
+         */
+        var dreiDbuttons = jQuery(".slide_buttons");
+        dreiDbuttons.mouseenter( function () {
+            jQuery(this).css({"transform": "translateY(3px)",
+            "border-bottom": "4px solid #488B49",
+            "border-left": "3px solid #488B49"})
+        });
+        dreiDbuttons.mouseleave( function () {
+            jQuery(this).css({"transform": "translateY(-3px)", "background-color": "#ACF187",
+            "border-left": "4px solid #488B49",
+            "border-bottom": "7px solid #488B49",
+            "border-radius": "10px"})
+        });
+        dreiDbuttons.mousedown( function () {
+            jQuery(this).css({"background-color": "#7DB95C",
+            "transform": "translateY(6px)",
+            "border-bottom": "1px solid #488B49",
+            "border-left": "1px solid #488B49"})
+        });
+        dreiDbuttons.mouseup( function () {
+            jQuery(this).css({"transform": "translateY(3px)",
+                "border-bottom": "4px solid #488B49",
+                "border-left": "3px solid #488B49",
+                "background-color": "#ACF187"})
+        });
+
+
+        /*
+         Umsetzung der Diashow:
+         Es werden zwei Arrays erzeugt, eines das alle Bilder enthält und eines das die Buttons unterhalb der Bilder enthält.
+         Wenn die Grenzen des Bild-Array über- oder unterschritten werden wird der Index zurück auf die größte oder kleinste Stelle gesetzt, so bleibt das letzte oder erste Bild, auch wenn die Buttons über die Grenzen hinaus bedient werden.
+
+         */
+
+        //Alle 3,5 Sekunden wir der Index der Bildanzeige um +1 erhöht.
         window.setInterval("nextImg(1)", 3500);
+
 
         var pointer = 1;
         changeImg(pointer);
 
+        //Beim Klicken auf die Index-Buttons unterhalb des Bildes wird zum das Bild an der geklickten Indexstelle angezeigt.
         function setPointer(n) {
             pointer = n;
             changeImg(pointer);
         }
 
+        //Die Funktion nextImg erhöht oder verringert den Bildindex um einen vorgegebenen Wert. Jeder Buttonklick erhöht oder verringeert um 1.
         function nextImg(n) {
             changeImg(pointer += n);
         }
@@ -134,11 +185,17 @@
         function changeImg(n) {
             var y = document.getElementsByClassName("control-buttons");
             var x = document.getElementsByClassName("images");
+
+            //Der Bildindex geht nie über die Grenzen der Arrays hinaus.
             if (n > x.length) {pointer = x.length}
             if (n < 1) { pointer = 1}
+
+            //Alle Bilder werden auf unsichtbar gesetzt.
             for (var i = 0; i < x.length; i++) {
                 x[i].style.display = "none";
             }
+
+            //Alle Kontrollbuttons deren Bild gerade nicht gezeigt wird sollen einen transparenten Hintergrund haben.
             for (var j = 0; j < y.length; j++) {
                 y[j].style.backgroundColor = "transparent";
             }
@@ -167,6 +224,7 @@
             <p id="en2"><a href="https://en.wikipedia.org/wiki/Smoothie">Learn more about Smoothies</a></p>
 
             <script>
+                //Je nachdem ob die Browsersprache Deutsch ist, werden die entsprechenden Elemente ein- oder ausgeblendet.
                 if (navigator.language === "de"){
                     document.getElementById("en").style.display = "none";
                     document.getElementById("en2").style.display = "none";
